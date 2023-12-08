@@ -1,0 +1,66 @@
+{% extends 'frontend/index.html' %}
+{% block content %}
+    <div class="container mt-5">
+        <form class="col-5 mx-auto card p-3 shadow-lg" method="post">        {% csrf_token %}
+        <h2>Register</h2>
+        <hr>
+        {% if messages %}
+        {{ message.tags }}
+        <div class="alert alert-primary" role="alert">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+          </div>
+            
+        {% endif %}
+        <label for="role">Select Role:</label>
+        <select name="role" required>
+            <option value="doctor">Doctor</option>
+            <option value="patient">Patient</option>
+        </select>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">First name</label>
+            <input type="text" class="form-control" name="first_name" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+          </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="last_name" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+          </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Username</label>
+                  <input type="text" class="form-control"  name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control" name="confirm_password" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">line1_address</label>
+                  <input type="text" class="form-control"  name="line1_address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">city</label>
+                  <input type="text" class="form-control"  name="city" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">state</label>
+                  <input type="text" class="form-control"  name="state" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">pincode</label>
+                  <input type="text" class="form-control"  name="pincode" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <p>Already have an account? <a href="/login/">Login</a></p>
+                <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+{% endblock %}
