@@ -1,9 +1,16 @@
+
 {
-    "builds": [{
-        "src": "AcrossTheGlobe/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+    "builds": [
+        {
+            "src": "AcrossTheGlobe/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.9",
+                "buildCommand": "sudo apt-get update && sudo apt-get install -y libmysqlclient-dev && pip install -r requirements.txt"
+            }
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
