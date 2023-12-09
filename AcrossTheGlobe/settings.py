@@ -133,6 +133,7 @@ USE_TZ = True
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
+import dj_database_url
 STATIC_ROOT= 'staticfiles'
 
 

@@ -2,6 +2,10 @@ from django.contrib import messages
 from .models import *
 from django.shortcuts import render, redirect
 
+
+def home(request):
+    return render(request, 'frontend/login.html')
+
 def register_page(request):
 
     if request.method == "POST":
